@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "FastAPI backend for an AI-enabled application."
 requires-python = ">=3.12"
 dependencies = [
+  "agno[openai]",
   "fastapi",
   "pydantic-settings",
   "python-dotenv",

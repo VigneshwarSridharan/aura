@@ -7,3 +7,11 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     response: str
+
+
+class AgentRequest(BaseModel):
+    message: str
+
+
+class AgentResponse(BaseModel):
+    response: str

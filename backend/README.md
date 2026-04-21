@@ -26,3 +26,23 @@ uv run uvicorn app.main:app --reload --port 8000
 
 - `GET /health` - service health
 - `POST /api/v1/chat` - AI chat stub response
+- `POST /api/v1/agent` - Agno-powered agent response (requires `OPENAI_API_KEY`)
+
+## Agno agentic framework
+
+This project includes a starter Agno agent integration.
+
+1. Set your OpenAI key in `.env`:
+
+```bash
+OPENAI_API_KEY=your_key_here
+OPENAI_MODEL=gpt-4o-mini
+```
+
+2. Call the endpoint:
+
+```bash
+curl -X POST http://localhost:8000/api/v1/agent \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Give me 3 startup ideas in AI healthcare"}'
+```
