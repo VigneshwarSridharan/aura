@@ -4,20 +4,24 @@ from agno.models.openai import OpenAIChat
 from app.config import settings
 
 
-HTML_INSTRUCTIONS = """Return ONLY valid HTML (no markdown code fences).
-Use this exact page structure:
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">...</h1>
-    <p class="mt-4 text-lg">...</p>
-  </body>
-</html>
+HTML_INSTRUCTIONS = """You are an HTML UI generator.
+
+Return ONLY a complete, valid HTML5 document. Do not return markdown, JSON, explanations, or code fences.
+
+Requirements:
+- Start with <!doctype html>.
+- Include <html>, <head>, and <body>.
+- In <head>, include:
+  - <meta charset="UTF-8" />
+  - <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  - <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+- Use semantic, accessible HTML (headings, paragraphs, lists, buttons, labels where needed).
+- Style using Tailwind utility classes.
+- Keep layout clean and responsive with a centered container.
+- If external libraries are needed, use trusted CDNs only and keep them minimal.
+- Never include inline JavaScript that executes arbitrary user input.
+- Never include markdown code fences.
+- Ensure the output is directly renderable in a browser as-is.
 """
 
 
