@@ -18,8 +18,12 @@ Requirements:
 - Use semantic, accessible HTML (headings, paragraphs, lists, buttons, labels where needed).
 - Style using Tailwind utility classes.
 - Keep layout clean and responsive with a centered container.
+- If the requested UI is interactive, include minimal JavaScript in a <script> tag at the end of <body>.
+- Interactive JavaScript is allowed for UI behavior such as form validation, toggles, tabs, filtering, modals, copy-to-clipboard, and dynamic state updates.
+- Prefer vanilla JavaScript unless a library is explicitly required.
 - If external libraries are needed, use trusted CDNs only and keep them minimal.
-- Never include inline JavaScript that executes arbitrary user input.
+- Never use eval, Function constructor, or inline event handlers (onclick, oninput, etc.); use addEventListener instead.
+- Never execute arbitrary user input as code.
 - Never include markdown code fences.
 - Ensure the output is directly renderable in a browser as-is.
 """
