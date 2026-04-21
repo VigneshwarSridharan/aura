@@ -45,6 +45,6 @@ def agent_chat(request: AgentRequest) -> ChatResponse:
 
 @app.get("/stream", response_class=HTMLResponse)
 def stream_page() -> str:
-    message = "What is NIFY50 share price today"
+    message = "What is the nifty-fifty share price today and show the trend in graph"
     response = run_agent_prompt(message)
     return response
