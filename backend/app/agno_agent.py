@@ -1,5 +1,6 @@
 from agno.agent import Agent
 from agno.models.openai import OpenAIChat
+from agno.tools.duckduckgo import DuckDuckGoTools
 
 from app.config import settings
 
@@ -36,11 +37,14 @@ def run_agent_prompt(message: str) -> str:
     if not settings.openai_api_key:
         raise ValueError("OPENAI_API_KEY is not configured.")
 
+    tools = [DuckDuckGoTools()] if settings.agno_enable_web_search else []
+
     agent = Agent(
         model=OpenAIChat(
             id=settings.openai_model_id,
             api_key=settings.openai_api_key,
         ),
+        tools=tools,
         markdown=False,
         instructions=HTML_INSTRUCTIONS,
     )

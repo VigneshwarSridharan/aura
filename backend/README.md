@@ -36,7 +36,8 @@ This project includes a starter Agno agent integration.
 
 ```bash
 OPENAI_API_KEY=your_key_here
-OPENAI_MODEL=gpt-4o-mini
+AGNO_MODEL_ID=gpt-4o-mini
+AGNO_ENABLE_WEB_SEARCH=true
 ```
 
 2. Call the endpoint:
@@ -46,3 +47,11 @@ curl -X POST http://localhost:8000/api/v1/agent \
   -H "Content-Type: application/json" \
   -d '{"message":"Give me 3 startup ideas in AI healthcare"}'
 ```
+
+## Free web search integration (MCP-style tool use)
+
+The Agno agent is configured with `DuckDuckGoTools`, a free web search toolkit.
+
+- No API key required for search
+- Controlled by `AGNO_ENABLE_WEB_SEARCH` in `.env`
+- The agent can search the web for up-to-date answers when needed
