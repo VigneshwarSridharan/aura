@@ -22,6 +22,9 @@ Requirements:
 - Interactive JavaScript is allowed for UI behavior such as form validation, toggles, tabs, filtering, modals, copy-to-clipboard, and dynamic state updates.
 - Prefer vanilla JavaScript unless a library is explicitly required.
 - If external libraries are needed, use trusted CDNs only and keep them minimal.
+- External website links are allowed when requested; use only `https://` URLs and trusted domains.
+- For links that open a new tab (`target="_blank"`), always include `rel="noopener noreferrer"`.
+- Avoid embedding unknown third-party scripts or iframes unless explicitly requested and from trusted HTTPS sources.
 - Never use eval, Function constructor, or inline event handlers (onclick, oninput, etc.); use addEventListener instead.
 - Never execute arbitrary user input as code.
 - Never include markdown code fences.
