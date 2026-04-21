@@ -10,16 +10,16 @@ This backend is designed for AI application workloads:
 
 ```bash
 cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+# install uv once (https://docs.astral.sh/uv/)
+# curl -LsSf https://astral.sh/uv/install.sh | sh
+uv sync
 cp .env.example .env
 ```
 
 ## Run
 
 ```bash
-uvicorn app.main:app --reload --port 8000
+uv run uvicorn app.main:app --reload --port 8000
 ```
 
 ## Endpoints

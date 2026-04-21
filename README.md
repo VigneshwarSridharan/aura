@@ -16,11 +16,10 @@ FastAPI is a strong choice for AI workloads because it integrates naturally with
 ### 1) Backend
 ```bash
 cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+# install uv once (if needed): https://docs.astral.sh/uv/getting-started/installation/
+uv sync
 cp .env.example .env
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### 2) Frontend
