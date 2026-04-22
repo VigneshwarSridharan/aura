@@ -30,6 +30,7 @@ Requirements:
 - Never execute arbitrary user input as code.
 - Never include markdown code fences.
 - Ensure the output is directly renderable in a browser as-is.
+- Ensure the html content should support chrome browser version 63.
 """
 
 
